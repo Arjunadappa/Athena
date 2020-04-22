@@ -67,11 +67,16 @@ class BookMergeView(APIView):
         with open(os.path.join('media','mergedfile.pdf'), 'wb') as pdfOutputFile:
                 writer.write(pdfOutputFile)
         mergedbook = os.path.join('media','mergedfile.pdf') 
+        response = FileResponse(open(os.path.join('media', 'mergedfile.pdf'), 'rb'))
+        response['content_type'] = "application/octet-stream"
+        response['Content-Disposition'] = 'attachment; filename="mergedfile.pdf"'
+
+        return response    
 
         #serializer = FileSerializer(mergedbook)       
         
 
-        return Response(mergedbook)  
+        #return Response(mergedbook)  
 
 
            
