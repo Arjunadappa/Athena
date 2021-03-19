@@ -4,5 +4,5 @@ Pillow==6.2.2
 pytz==2018.4
 pdfrw==0.4
 PyPDF2==1.26.0
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 django-cors-headers==3.2.1
